@@ -643,11 +643,11 @@ def run_dvkh_5_tieuchi():
         file_42c_upload = st.file_uploader("10_Danh sach nhan su_T*.xlsx", type=["xls","xlsx"], key="dvkh_tab2_42c")
         file_42d_upload = st.file_uploader("2.DS..._nghi_viec.xlsx", type=["xls","xlsx"], key="dvkh_tab2_42d")
         file_mapping_upload = st.file_uploader("Mapping_1405.xlsx", type=["xls","xlsx"], key="dvkh_tab2_map")
-        chi_nhanh = st.text_input("Nhập tên chi nhánh hoặc mã SOL để lọc (VD: HANOI hoặc 1405)").strip().upper()
+        chi_nhanh = st.text_input("Nhập mã SOL để lọc (VD: 1405)").strip().upper()
 
         if st.button("Chạy Tiêu chí 4-5"):
             if not (files_42a_upload and file_42b_upload and file_42c_upload and file_42d_upload and file_mapping_upload and chi_nhanh):
-                st.error("Vui lòng tải đủ các file và nhập chi_nhanh để chạy Tiêu chí 4-5.")
+                st.error("Vui lòng tải đủ các file và nhập mã sol để chạy Tiêu chí 4-5.")
                 audit_log("run_tieuchi_4_5_failed", "missing inputs", user)
             else:
                 try:
